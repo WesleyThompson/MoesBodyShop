@@ -14,6 +14,8 @@
         [SerializeField] private MainMenuController mainMenu;
         [SerializeField] private FirstPersonController firstPersonController;
 
+        private const string TwitterURL = "https://twitter.com/tooManyWes";
+
         private void Awake()
         {
             firstPersonController.SetCursorLock(false);
@@ -40,6 +42,11 @@
         public void EndGame()
         {
             SceneManager.LoadScene(0);
+        }
+
+        public void OpenTwitter()
+        {
+            Application.OpenURL(TwitterURL);
         }
     }
 }
