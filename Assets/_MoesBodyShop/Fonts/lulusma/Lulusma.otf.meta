@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 7bbb540da6b49bc428f3e64d7882aabc
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Lulusma
+  fontNames:
+  - Lulusma
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 53cbc5dce21eaeb4cba06cd2c1126740, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

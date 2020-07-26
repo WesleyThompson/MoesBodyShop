@@ -1,0 +1,39 @@
+# Exported from Wings 3D 2.1.5
+newmtl Cylinder2_copy15_auv
+Ns 90.0
+d 1.0
+illum 2
+Kd 1.0 1.0 1.0
+Ka 1.0 1.0 1.0
+Ks 0.0 0.0 0.0
+Ke 0.0 0.0 0.0
+map_Kd Cylinder2_copy15_auv.bmp.png
+
+newmtl Int
+Ns 0.0
+d 1.0
+illum 2
+Kd 0.0 0.0 0.0
+Ka 0.0 0.0 0.0
+Ks 0.0 0.0 0.0
+Ke 0.0 0.0 0.0
+
+newmtl License Plate_copy16_auv
+Ns 90.0
+d 1.0
+illum 2
+Kd 1.0 1.0 1.0
+Ka 1.0 1.0 1.0
+Ks 0.0 0.0 0.0
+Ke 0.0 0.0 0.0
+map_Kd License Plate_copy16_auv.bmp.png
+
+newmtl Shadow
+Ns 0.0
+d 0.6
+illum 2
+Kd 0.0 0.0 0.0
+Ka 0.0 0.0 0.0
+Ks 0.0 0.0 0.0
+Ke 0.0 0.0 0.0
+
