@@ -6,12 +6,15 @@ using Graveyard;
 
 public class TextPrinterMixerBehaviour : PlayableBehaviour
 {
+    private TextPrinter _trackBinding;
+    private int _lastPlayed = -1;
+
     // NOTE: This function is called at runtime and edit time.  Keep that in mind when setting the values of properties.
     public override void ProcessFrame(Playable playable, FrameData info, object playerData)
     {
-        TextPrinter trackBinding = playerData as TextPrinter;
+        _trackBinding = playerData as TextPrinter;
 
-        if (!trackBinding)
+        if (!_trackBinding)
             return;
 
         int inputCount = playable.GetInputCount ();
@@ -21,9 +24,13 @@ public class TextPrinterMixerBehaviour : PlayableBehaviour
             float inputWeight = playable.GetInputWeight(i);
             ScriptPlayable<TextPrinterBehaviour> inputPlayable = (ScriptPlayable<TextPrinterBehaviour>)playable.GetInput(i);
             TextPrinterBehaviour input = inputPlayable.GetBehaviour ();
-            
+
             // Use the above variables to process each frame of this playable.
-            
+            if(inputWeight > 0 && i != _lastPlayed)
+            {
+                _trackBinding.SetText(input.TextToPrint);
+                _lastPlayed = i;
+            }
         }
     }
 }

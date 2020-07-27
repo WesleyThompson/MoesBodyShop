@@ -12,7 +12,9 @@
         public delegate void OnPrintFinish();
         public event OnPrintFinish PrintFinish;
 
+        [SerializeField] private GameObject textObject;
         [SerializeField] private float characterSpeed = 0.2f;
+        [SerializeField] private float textCloseDelay = 1f;
 
         private Coroutine printCoroutine;
         private Text text;
@@ -21,12 +23,14 @@
         private void Awake()
         {
             text = GetComponent<Text>();
+            textObject.SetActive(false);
         }
 
         public void SetText(string newContent)
         {
             content = newContent;
 
+            textObject.SetActive(true);
             if (printCoroutine != null)
             {
                 StopCoroutine(printCoroutine);
@@ -74,6 +78,9 @@
             {
                 PrintFinish.Invoke();
             }
+
+            yield return new WaitForSeconds(textCloseDelay);
+            textObject.SetActive(false);
         }
     }
 }

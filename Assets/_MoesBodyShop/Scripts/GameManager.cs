@@ -6,11 +6,13 @@
     using System.Collections.Generic;
 
     using UnityEngine;
+    using UnityEngine.Playables;
     using UnityEngine.SceneManagement;
     using UnityStandardAssets.Characters.FirstPerson;
 
     public class GameManager : MonoBehaviour
     {
+        [SerializeField] private PlayableDirector director;
         [SerializeField] private MainMenuController mainMenu;
         [SerializeField] private FirstPersonController firstPersonController;
 
@@ -32,6 +34,7 @@
             AudioManager.instance.SetSFXVolume(true);
             mainMenu.CloseMenu();
             firstPersonController.SetCursorLock(true);
+            director.Play();
         }
 
         public void ExitGame()
