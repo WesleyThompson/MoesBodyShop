@@ -48,6 +48,7 @@ MonoBehaviour:
     TextToPrint: The nightmare was always at the same place. . . an abandoned auto
       body shop on the way to school. It partially collapsed during a tornado and
       was left to rot.
+    NameOfSpeaker: Narrator
 --- !u!114 &-2953078099880431528
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -286,3 +287,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   template:
     TextToPrint: I used to have this dream. . . well more of a nightmare.
+    NameOfSpeaker: Narrator

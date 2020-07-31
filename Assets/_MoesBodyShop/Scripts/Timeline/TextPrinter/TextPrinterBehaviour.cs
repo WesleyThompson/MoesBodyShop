@@ -8,6 +8,7 @@ using Graveyard;
 public class TextPrinterBehaviour : PlayableBehaviour
 {
     public string TextToPrint;
+    public string NameOfSpeaker;
 
     public override void OnPlayableCreate (Playable playable)
     {

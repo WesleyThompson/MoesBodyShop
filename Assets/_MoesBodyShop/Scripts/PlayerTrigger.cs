@@ -5,10 +5,11 @@
 
     public class PlayerTrigger : MonoBehaviour
     {
+        [Header("Trigger Settings")]
         public UnityEvent TriggerEnterEvent;
         public UnityEvent TriggerExitEvent;
 
-        [SerializeField] private bool fireOnce = false;
+        [SerializeField] private bool triggerOnce = false;
 
         private const string PlayerTag = "Player";
 
@@ -17,25 +18,29 @@
 
         private void OnTriggerEnter(Collider other)
         {
-            if(fireOnce && _hasFiredEnter == false)
+            if (other.tag == PlayerTag)
             {
-                if (other.tag == PlayerTag)
+                if(triggerOnce && _hasFiredEnter)
                 {
-                    TriggerEnterEvent.Invoke();
-                    _hasFiredEnter = true;
+                    return;
                 }
+
+                TriggerEnterEvent.Invoke();
+                _hasFiredEnter = true;
             }
         }
 
         private void OnTriggerExit(Collider other)
         {
-            if (fireOnce && _hasFiredExit == false)
+            if (other.tag == PlayerTag)
             {
-                if (other.tag == PlayerTag)
+                if(triggerOnce && _hasFiredExit)
                 {
-                    TriggerExitEvent.Invoke();
-                    _hasFiredExit = true;
+                    return;
                 }
+
+                TriggerExitEvent.Invoke();
+                _hasFiredExit = true;
             }
         }
     }

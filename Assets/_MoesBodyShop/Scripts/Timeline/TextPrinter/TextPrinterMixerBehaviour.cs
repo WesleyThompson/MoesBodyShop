@@ -28,7 +28,7 @@ public class TextPrinterMixerBehaviour : PlayableBehaviour
             // Use the above variables to process each frame of this playable.
             if(inputWeight > 0 && i != _lastPlayed)
             {
-                _trackBinding.SetText(input.TextToPrint);
+                _trackBinding.SetText(input.TextToPrint, input.NameOfSpeaker);
                 _lastPlayed = i;
             }
         }
