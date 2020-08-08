@@ -20,9 +20,13 @@
         [SerializeField] private MainMenuController mainMenu;
         [SerializeField] private FirstPersonController firstPersonController;
         [SerializeField] private Text interactText;
+        [SerializeField] private RainScript rain;
+        [SerializeField] private Light directionalLight;
+        [SerializeField] private Transform undergroundSpawnLocation;
 
         private const string DefaultInteractMessage = "Press [E] to interact";
         private const string TwitterURL = "https://twitter.com/tooManyWes";
+        private const float UndergroundFogDensity = 0.1f;
 
         private bool _isDisplayingInteractText = false;
 
@@ -66,6 +70,19 @@
         {
             interactText.text = interactMessage;
             interactText.gameObject.SetActive(isActive);
+        }
+
+        public void GoUnderground()
+        {
+            //Set lighting settings
+            RenderSettings.fogDensity = UndergroundFogDensity;
+            directionalLight.gameObject.SetActive(false);
+
+            //Adjust rain
+            rain.FollowCamera = false;
+
+            //Move player
+            firstPersonController.gameObject.transform.position = undergroundSpawnLocation.position;
         }
     }
 }
