@@ -18,8 +18,11 @@
 
         [SerializeField] private PlayableDirector director;
         [SerializeField] private MainMenuController mainMenu;
+        [Header("Player")]
         [SerializeField] private FirstPersonController firstPersonController;
+        [SerializeField] private CharacterController characterController;
         [SerializeField] private Text interactText;
+        [Header("Environment")]
         [SerializeField] private RainScript rain;
         [SerializeField] private Light directionalLight;
         [SerializeField] private Transform undergroundSpawnLocation;
@@ -82,7 +85,11 @@
             rain.FollowCamera = false;
 
             //Move player
+            firstPersonController.enabled = false;
+            characterController.enabled = false;
             firstPersonController.gameObject.transform.position = undergroundSpawnLocation.position;
+            firstPersonController.enabled = true;
+            characterController.enabled = true;
         }
     }
 }
