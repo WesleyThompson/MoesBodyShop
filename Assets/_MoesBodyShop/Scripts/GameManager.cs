@@ -80,6 +80,7 @@
             //Set lighting settings
             RenderSettings.fogDensity = UndergroundFogDensity;
             directionalLight.gameObject.SetActive(false);
+            Camera.main.clearFlags = CameraClearFlags.SolidColor;
 
             //Adjust rain
             rain.FollowCamera = false;
@@ -87,7 +88,11 @@
             //Move player
             firstPersonController.enabled = false;
             characterController.enabled = false;
-            firstPersonController.gameObject.transform.position = undergroundSpawnLocation.position;
+
+            Transform playerTransform = firstPersonController.gameObject.transform;
+            playerTransform.position = undergroundSpawnLocation.position;
+            playerTransform.rotation = undergroundSpawnLocation.rotation;
+
             firstPersonController.enabled = true;
             characterController.enabled = true;
         }
