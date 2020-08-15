@@ -62,10 +62,8 @@ namespace DigitalRuby.RainMaker
             base.Start();
         }
 
-        protected override void Update()
+        private void LateUpdate()
         {
-            base.Update();
-
             UpdateRain();
         }
     }
