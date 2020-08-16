@@ -15,6 +15,7 @@ AudioMixerGroupController:
   m_Send: 00000000000000000000000000000000
   m_Effects:
   - {fileID: -5453961739768246673}
+  - {fileID: -3348329615740121048}
   m_UserColorIndex: 0
   m_Mute: 0
   m_Solo: 0
@@ -44,6 +45,22 @@ AudioMixerEffectController:
   m_EffectName: Attenuation
   m_MixLevel: 496fe80e0e728e14aadbb1163861934f
   m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
+--- !u!244 &-3348329615740121048
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: bf1e1056dc7713f4fb20f5a7593819ce
+  m_EffectName: Lowpass Simple
+  m_MixLevel: e9f7f127c399b5f4fb6bea371084ea5e
+  m_Parameters:
+  - m_ParameterName: Cutoff freq
+    m_GUID: e9d8dcafbacc5e8479a4c0cf15929116
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0
   m_Bypass: 0
@@ -86,6 +103,7 @@ AudioMixerController:
   m_MasterGroup: {fileID: 24300002}
   m_Snapshots:
   - {fileID: 24500006}
+  - {fileID: 4280841846057152909}
   m_StartSnapshot: {fileID: 24500006}
   m_SuspendThreshold: -80
   m_EnableSuspend: 1
@@ -149,12 +167,38 @@ AudioMixerSnapshotController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Snapshot
+  m_Name: Default
   m_AudioMixer: {fileID: 24100000}
   m_SnapshotID: 86a0c1211b96de14d84c8ececcc15317
   m_FloatValues:
+    2c4e69d03efbe2341b8b0c982a7b9a5a: 0
     e5838b22da5c8b741bb033f03e9bbf3b: 0
+    e9d8dcafbacc5e8479a4c0cf15929116: 22000
   m_TransitionOverrides: {}
+--- !u!244 &1525973524200355945
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: 193f708ed65dfb346a8d6f77136cab95
+  m_EffectName: Echo
+  m_MixLevel: 064d483e7b1f9d145bbde47b8309db23
+  m_Parameters:
+  - m_ParameterName: Delay
+    m_GUID: 7b6be6c525b720646acbc36e480531f2
+  - m_ParameterName: Decay
+    m_GUID: 024c9e8664f6343429bdad26ded14aa4
+  - m_ParameterName: Max channels
+    m_GUID: f7410595db66cbd41a1ebe445ba6841c
+  - m_ParameterName: Drymix
+    m_GUID: 6c5ec5aaabc6d1a4abbaeefab0f0f210
+  - m_ParameterName: Wetmix
+    m_GUID: 5977381abeadd2841a1f97d1c02b6448
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
 --- !u!243 &3155855853006135332
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
@@ -174,6 +218,20 @@ AudioMixerGroupController:
   m_Mute: 0
   m_Solo: 0
   m_BypassEffects: 0
+--- !u!245 &4280841846057152909
+AudioMixerSnapshotController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Underground
+  m_AudioMixer: {fileID: 24100000}
+  m_SnapshotID: 5971c7eb5586d23429e1c7719958a462
+  m_FloatValues:
+    e5838b22da5c8b741bb033f03e9bbf3b: 0
+    99a5b90f287a00e47979592d9bd888af: 500
+    e9d8dcafbacc5e8479a4c0cf15929116: 3500
+  m_TransitionOverrides: {}
 --- !u!243 &6016929097746591304
 AudioMixerGroupController:
   m_ObjectHideFlags: 0

@@ -84,6 +84,7 @@
 
             //Adjust rain
             rain.FollowCamera = false;
+            AudioManager.instance.SetIndoorRain();
 
             //Move player
             firstPersonController.enabled = false;

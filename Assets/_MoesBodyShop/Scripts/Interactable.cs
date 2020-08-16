@@ -69,5 +69,10 @@
             _isPlayerInTrigger = false;
             GameManager.instance.SetInteractText(false);
         }
+
+        public void ResetInteraction()
+        {
+            _hasInteracted = false;
+        }
     }
 }

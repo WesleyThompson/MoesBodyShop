@@ -8,6 +8,7 @@
         public static AudioManager instance;
 
         [SerializeField] private AudioMixer audioMixer;
+        [SerializeField] private AudioMixerSnapshot audioMixerSnapshot;
 
         private const string MasterVolumeParam = "MasterVolume";
         private const string SFXVolumeParam = "SFXVolume";
@@ -53,6 +54,25 @@
         public void SetUIVolume(float value)
         {
             audioMixer.SetFloat(UIVolumeParam, value);
+        }
+
+        public void SetRainVolume(float value)
+        {
+            if(value > FullVolume)
+            {
+                value = FullVolume;
+            }
+            if(value < ZeroVolume)
+            {
+                value = ZeroVolume;
+            }
+
+            audioMixer.SetFloat(RainVolumeParam, value);
+        }
+
+        public void SetIndoorRain()
+        {
+            audioMixerSnapshot.TransitionTo(.5f);
         }
     }
 }

@@ -1,18 +1,26 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class RainAudioDepthControl : MonoBehaviour
+﻿namespace MoesBodyShop
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    using System.Collections;
+    using System.Collections.Generic;
+    using UnityEngine;
 
-    // Update is called once per frame
-    void Update()
+    public class RainAudioDepthControl : MonoBehaviour
     {
-        
+        [SerializeField] private float verticalOffset;
+
+        private AudioManager _audioManager;
+
+        private void Start()
+        {
+            _audioManager = AudioManager.instance;
+        }
+
+        private void Update()
+        {
+            if(transform.position.y < verticalOffset)
+            {
+                _audioManager.SetRainVolume(transform.position.y + verticalOffset);
+            }
+        }
     }
 }
