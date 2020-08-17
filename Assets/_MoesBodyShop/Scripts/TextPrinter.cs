@@ -28,6 +28,11 @@
             textObject.SetActive(false);
         }
 
+        public void SetTextYou(string newMessage)
+        {
+            SetText(newMessage, "You");
+        }
+
         public void SetText(string newContent, string name = null)
         {
             content = newContent;
