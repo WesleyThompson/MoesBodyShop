@@ -52,6 +52,8 @@ namespace DecalSystem {
             var mesh = MeshFilter.sharedMesh;
             var meshes = GameObject.FindObjectsOfType<Decal>().Select( i => i.MeshFilter.sharedMesh );
             if (meshes.Contains( mesh )) MeshFilter.sharedMesh = null; // if mesh was copied
+
+            BuildAndSetDirty();
         }
 
         void OnEnable() {
@@ -90,11 +92,9 @@ namespace DecalSystem {
 
 
         public void BuildAndSetDirty() {
-#if UNITY_EDITOR
             if (Sprite) DecalUtils.FixRatio( this, ref oldScale );
             DecalBuilder.Build( this );
             DecalUtils.SetDirty( this );
-#endif
         }
 
 

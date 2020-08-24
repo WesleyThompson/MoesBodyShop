@@ -9,6 +9,7 @@ Shader "Projector/Multiply" {
 	Subshader {
 		Tags {"Queue"="Transparent"}
 		Pass {
+			Fog { Mode Off }
 			ZWrite Off
 			ColorMask RGB
 			Blend DstColor Zero

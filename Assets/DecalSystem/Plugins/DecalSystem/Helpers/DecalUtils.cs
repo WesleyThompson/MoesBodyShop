@@ -70,16 +70,15 @@
             return bounds;
         }
 
-#if UNITY_EDITOR
         public static void SetDirty(Decal decal) {
+#if UNITY_EDITOR
             if (decal.gameObject.scene.IsValid()) {
                 if (!EditorApplication.isPlaying) EditorSceneManager.MarkSceneDirty( decal.gameObject.scene );
             } else {
                 EditorUtility.SetDirty( decal.gameObject );
             }
-        }
 #endif
-
+        }
         public static void FixRatio(Decal decal, ref Vector3 oldScale) {
             var transform = decal.transform;
             var rect = decal.Sprite.rect;

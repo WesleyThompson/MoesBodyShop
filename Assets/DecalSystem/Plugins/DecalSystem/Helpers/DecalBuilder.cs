@@ -15,7 +15,6 @@
         private static void Build(MeshBuilder builder, Decal decal) {
             var filter = decal.MeshFilter;
             var renderer = decal.MeshRenderer;
-#if UNITY_EDITOR
             if (decal.Material && decal.Sprite) {
                 builder.Clear();
                 Build_( builder, decal );
@@ -26,7 +25,6 @@
                 filter.sharedMesh = null;
                 renderer.sharedMaterial = null;
             }
-#endif
         }
 
 
