@@ -112,6 +112,10 @@
                 {
                     SetSearchMode();
                 }
+                else
+                {
+                    navAgent.SetDestination(_targetTransform.position);
+                }
             }
 
             IsPlayerVisible();
