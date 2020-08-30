@@ -87,12 +87,17 @@
             AudioManager.instance.SetIndoorRain();
 
             //Move player
+            TeleportPlayer(undergroundSpawnLocation);
+        }
+
+        public void TeleportPlayer(Transform teleportLocation)
+        {
             firstPersonController.enabled = false;
             characterController.enabled = false;
 
             Transform playerTransform = firstPersonController.gameObject.transform;
-            playerTransform.position = undergroundSpawnLocation.position;
-            playerTransform.rotation = undergroundSpawnLocation.rotation;
+            playerTransform.position = teleportLocation.position;
+            playerTransform.rotation = teleportLocation.rotation;
 
             firstPersonController.enabled = true;
             characterController.enabled = true;
