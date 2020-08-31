@@ -67,6 +67,7 @@
             for (int i = 0; i < generatorInteractables.Length; i++)
             {
                 generatorInteractables[i].ResetInteraction();
+                generatorInteractables[i].enabled = true;
                 _generatorControllers[i].ResetGenerator();
             }
         }
