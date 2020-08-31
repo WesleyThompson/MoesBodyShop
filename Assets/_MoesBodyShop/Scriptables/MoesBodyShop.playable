@@ -152,7 +152,8 @@ MonoBehaviour:
   m_Name: TextPrinterClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
   m_EditorClassIdentifier: 
   template:
-    TextToPrint: Moe was useful once, but realized his folly too late.
+    TextToPrint: Moe was useful, making creatures for my purpose, but realized his
+      folly and locked me away.
     NameOfSpeaker: Abaddon
 --- !u!114 &-8238085640780305820
 MonoBehaviour:
@@ -199,7 +200,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15c38f6fa1940124db1ab7f6fe7268d1, type: 3}
   m_Name: Signal Emitter
   m_EditorClassIdentifier: 
-  m_Time: 89.36666666666667
+  m_Time: 106.78333333333333
   m_Retroactive: 0
   m_EmitOnce: 0
   m_Asset: {fileID: 11400000, guid: 103d291d5c103eb4281f7a364ea872f0, type: 2}
@@ -1678,7 +1679,7 @@ MonoBehaviour:
     m_Start: 47.9
     m_ClipIn: 0
     m_Asset: {fileID: -1029663403014062785}
-    m_Duration: 42.966666666666676
+    m_Duration: 60.38333333333333
     m_TimeScale: 1
     m_ParentTrack: {fileID: -3247345148968308612}
     m_EaseInDuration: 0
@@ -2188,7 +2189,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15c38f6fa1940124db1ab7f6fe7268d1, type: 3}
   m_Name: Signal Emitter
   m_EditorClassIdentifier: 
-  m_Time: 90.86666666666667
+  m_Time: 108.28333333333333
   m_Retroactive: 0
   m_EmitOnce: 0
   m_Asset: {fileID: 11400000, guid: 37b518272997f134cbf58661b7b1b01a, type: 2}
@@ -2763,7 +2764,7 @@ MonoBehaviour:
     m_Start: 53.86666666666667
     m_ClipIn: 0
     m_Asset: {fileID: -4128188190808219691}
-    m_Duration: 6
+    m_Duration: 8
     m_TimeScale: 1
     m_ParentTrack: {fileID: 196394407647864453}
     m_EaseInDuration: 0
@@ -2829,10 +2830,10 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: 02 Angel Speaking
   - m_Version: 1
-    m_Start: 59.86666666666667
+    m_Start: 61.86666666666667
     m_ClipIn: 0
     m_Asset: {fileID: -2062596915945180223}
-    m_Duration: 7.000000000000007
+    m_Duration: 8.000000000000007
     m_TimeScale: 1
     m_ParentTrack: {fileID: 196394407647864453}
     m_EaseInDuration: 0
@@ -2898,10 +2899,10 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: 03 Angel Speaking
   - m_Version: 1
-    m_Start: 85.86666666666667
+    m_Start: 99.86666666666667
     m_ClipIn: 0
     m_Asset: {fileID: 8177140737680791433}
-    m_Duration: 5
+    m_Duration: 7
     m_TimeScale: 1
     m_ParentTrack: {fileID: 196394407647864453}
     m_EaseInDuration: 0
@@ -2967,10 +2968,10 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: End Angel Speaking
   - m_Version: 1
-    m_Start: 66.86666666666667
+    m_Start: 69.86666666666667
     m_ClipIn: 0
     m_Asset: {fileID: 5904577342622875523}
-    m_Duration: 7
+    m_Duration: 10
     m_TimeScale: 1
     m_ParentTrack: {fileID: 196394407647864453}
     m_EaseInDuration: 0
@@ -3036,10 +3037,10 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: 04 Angel Speaking
   - m_Version: 1
-    m_Start: 80.86666666666667
+    m_Start: 92.86666666666667
     m_ClipIn: 0
     m_Asset: {fileID: 6572837541048518486}
-    m_Duration: 5
+    m_Duration: 7
     m_TimeScale: 1
     m_ParentTrack: {fileID: 196394407647864453}
     m_EaseInDuration: 0
@@ -3105,10 +3106,10 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: 06 Angel Speaking
   - m_Version: 1
-    m_Start: 73.86666666666667
+    m_Start: 79.86666666666667
     m_ClipIn: 0
     m_Asset: {fileID: -8416866627904932135}
-    m_Duration: 7
+    m_Duration: 13
     m_TimeScale: 1
     m_ParentTrack: {fileID: 196394407647864453}
     m_EaseInDuration: 0
@@ -4105,7 +4106,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: ScreenFaderClip
   - m_Version: 1
-    m_Start: 89.36666666666667
+    m_Start: 106.78333333333333
     m_ClipIn: 0
     m_Asset: {fileID: -6328689595583347117}
     m_Duration: 1.5
@@ -4553,7 +4554,7 @@ MonoBehaviour:
   m_Name: TextPrinterClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
   m_EditorClassIdentifier: 
   template:
-    TextToPrint: That traitorous insect betrayed and locked me in this cage.
+    TextToPrint: That traitorous insect betrayed me and locked me in this cage.
     NameOfSpeaker: Abaddon
 --- !u!74 &6255410592662798458
 AnimationClip:

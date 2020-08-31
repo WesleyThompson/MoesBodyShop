@@ -36,14 +36,13 @@
         private void Awake()
         {
             instance = GetComponent<GameManager>();
-
-            firstPersonController.SetCursorLock(false);
         }
 
         void Start()
         {
             //Can't change audio during awake :(
             AudioManager.instance.SetSFXVolume(false);
+            firstPersonController.SetCursorLock(false);
         }
 
         public void PlayGame()
@@ -93,7 +92,7 @@
 
         public void GoAngelArea()
         {
-            RenderSettings.fogColor = Color.black;
+            RenderSettings.fog = false;
         }
 
         public void TeleportPlayer(Transform teleportLocation)

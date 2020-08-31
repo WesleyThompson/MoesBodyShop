@@ -19,7 +19,7 @@
         [SerializeField] private Animator moeAnimator;
         [SerializeField] private AudioSource chaseMusic;
         [SerializeField] private AudioSource notChaseMusic;
-        [SerializeField] private AudioSource punchSound;
+        [SerializeField] private AudioSource voiceSound;
 
         private const float WaypointThreshold = 3f;
         private const string PlayerTag = "Player";
@@ -42,6 +42,7 @@
         private bool _canAttack = true;
         private bool hasChased = false;
 
+#if UNITY_EDITOR
         private void OnDrawGizmos()
         {
             //Draw the attack circle
@@ -60,6 +61,7 @@
             startDirection = Quaternion.AngleAxis(fov, Vector3.up) * startDirection;
             Handles.DrawLine(transform.position, (startDirection * visionThreshold) + transform.position);
         }
+#endif
 
         private void Awake()
         {
@@ -185,6 +187,7 @@
 
         private void SetSearchMode()
         {
+            voiceSound.Play();
             Debug.Log("Search mode");
             _moeState = State.Searching;
             navAgent.speed = WalkSpeed;
@@ -197,6 +200,7 @@
 
         private void SetChaseMode()
         {
+            voiceSound.Play();
             Debug.Log("Chase mode");
             _moeState = State.Chasing;
             if (hasChased)
@@ -210,6 +214,7 @@
 
         private void SetAlertMode()
         {
+            voiceSound.Play();
             Debug.Log("Alert mode");
             _moeState = State.Alert;
             navAgent.speed = ChaseSpeed;
