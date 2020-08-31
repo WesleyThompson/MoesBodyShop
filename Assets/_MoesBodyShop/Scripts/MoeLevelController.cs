@@ -1,7 +1,5 @@
 ﻿namespace MoesBodyShop
 {
-    using System.Collections;
-    using System.Collections.Generic;
     using UnityEngine;
 
     public class MoeLevelController : MonoBehaviour
@@ -16,11 +14,14 @@
 
         private byte _generatorsOn = 0;
         private byte _playerHealth = 2;
+        private GeneratorController[] _generatorControllers;
 
         private void Awake()
         {
             _playerHealth = MaxPlayerHealth;
             _generatorsOn = 0;
+            exitDoorInteractable.enabled = false;
+            _generatorControllers = FindObjectsOfType<GeneratorController>();
         }
 
         public void GeneratorActivated()
@@ -30,6 +31,7 @@
             {
                 //open the exit.
                 Debug.Log("Exit door opened");
+                exitDoorInteractable.enabled = true;
             }
         }
 
@@ -43,6 +45,11 @@
             }
         }
 
+        public void ExitFloor()
+        {
+
+        }
+
         private void PlayerDied()
         {
             Debug.Log("Player died");
@@ -54,6 +61,12 @@
 
             //Reset generators
             _generatorsOn = 0;
+
+            for (int i = 0; i < generatorInteractables.Length; i++)
+            {
+                generatorInteractables[i].ResetInteraction();
+                _generatorControllers[i].ResetGenerator();
+            }
         }
     }
 }
