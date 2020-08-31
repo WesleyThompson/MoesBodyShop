@@ -18,7 +18,7 @@
 
         private const byte MaxPumpsRequired = 3;
         private const string PumpParam = "Pump";
-        private const float PumpAnimDuration = 1f;
+        private const float PumpAnimDuration = 1.2f;
 
         private byte _pumpCount = 0;
         private bool _isActivated = false;

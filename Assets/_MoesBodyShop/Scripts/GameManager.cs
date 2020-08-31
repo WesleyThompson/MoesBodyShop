@@ -62,6 +62,7 @@
         public void EndGame()
         {
             SceneManager.LoadScene(0);
+            firstPersonController.SetCursorLock(false);
         }
 
         public void OpenTwitter()
@@ -88,6 +89,11 @@
 
             //Move player
             TeleportPlayer(undergroundSpawnLocation);
+        }
+
+        public void GoAngelArea()
+        {
+            RenderSettings.fogColor = Color.black;
         }
 
         public void TeleportPlayer(Transform teleportLocation)

@@ -17,6 +17,9 @@
         [SerializeField] private Transform[] waypoints;
         [SerializeField] private NavMeshAgent navAgent;
         [SerializeField] private Animator moeAnimator;
+        [SerializeField] private AudioSource chaseMusic;
+        [SerializeField] private AudioSource notChaseMusic;
+        [SerializeField] private AudioSource punchSound;
 
         private const float WaypointThreshold = 3f;
         private const string PlayerTag = "Player";
@@ -37,6 +40,7 @@
         private int _waypointIndex = -1;
         private State _moeState = State.Searching;
         private bool _canAttack = true;
+        private bool hasChased = false;
 
         private void OnDrawGizmos()
         {
@@ -186,12 +190,21 @@
             navAgent.speed = WalkSpeed;
             _targetTransform = GetClosestWaypoint();
             navAgent.SetDestination(_targetTransform.position);
+
+            notChaseMusic.UnPause();
+            chaseMusic.Stop();
         }
 
         private void SetChaseMode()
         {
             Debug.Log("Chase mode");
             _moeState = State.Chasing;
+            if (hasChased)
+            {
+                notChaseMusic.Pause();
+                chaseMusic.Play();
+            }
+            hasChased = true;
             navAgent.speed = ChaseSpeed;
         }
 
@@ -200,6 +213,9 @@
             Debug.Log("Alert mode");
             _moeState = State.Alert;
             navAgent.speed = ChaseSpeed;
+
+            notChaseMusic.UnPause();
+            chaseMusic.Stop();
         }
 
         private void Attack()

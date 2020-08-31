@@ -8,6 +8,7 @@
         [SerializeField] private MoeController moeController;
         [SerializeField] private Interactable exitDoorInteractable;
         [SerializeField] private Interactable[] generatorInteractables;
+        [SerializeField] private AudioSource playerHitAudio;
 
         private const byte TotalGenerators = 3;
         private const byte MaxPlayerHealth = 2;
@@ -38,6 +39,7 @@
         public void PlayerHit()
         {
             _playerHealth--;
+            playerHitAudio.Play();
 
             if(_playerHealth == 0)
             {
